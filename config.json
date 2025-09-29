@@ -41,13 +41,13 @@
   },
   "music": [
     {
-      "title": "Your Latest Track Title",
-      "description": "Add a brief description of your most recent track here.",
-      "image": "https://via.placeholder.com/300x200/ff6b35/ffffff?text=Latest+Track",
-      "releaseDate": "2024-09-01",
+      "title": "Please Focus",
+      "description": "Most recent track",
+      "image": "https://i1.sndcdn.com/artworks-5pqJgGmytVaQR6o5-X0mhew-t1080x1080.png",
+      "releaseDate": "2024-12-21",
       "streaming": {
-        "soundcloud": "https://soundcloud.com/fox-rush/your-track-url",
-        "spotify": "https://open.spotify.com/track/your-track-id"
+        "soundcloud": "https://soundcloud.com/fox-rush/please-focus",
+        "spotify": "https://open.spotify.com/track/0mHUgG3xLY7tdNb6x4LpkK"
       }
     },
     {
@@ -74,34 +74,8 @@
   "gallery": [
     {
       "image": "https://via.placeholder.com/400x400/ff6b35/ffffff?text=Live+Show",
-      "alt": "Live Performance",
-      "caption": "Live Performance"
-    },
-    {
-      "image": "https://via.placeholder.com/400x400/1a1a1a/ffffff?text=Studio",
-      "alt": "Studio Session",
-      "caption": "Studio Session"
-    },
-    {
-      "image": "https://via.placeholder.com/400x400/666666/ffffff?text=Behind+Scenes",
-      "alt": "Behind the Scenes",
-      "caption": "Behind the Scenes"
-    },
-    {
-      "image": "https://via.placeholder.com/400x400/ff8c42/ffffff?text=Band+Photo",
-      "alt": "Band Photo",
-      "caption": "Band Photo"
-    },
-    {
-      "image": "https://via.placeholder.com/400x400/333333/ffffff?text=Concert",
-      "alt": "Concert",
-      "caption": "Concert"
-    },
-    {
-      "image": "https://via.placeholder.com/400x400/555555/ffffff?text=Acoustic",
-      "alt": "Acoustic Session",
-      "caption": "Acoustic Session"
-    }
+      "alt": "Logo",
+      "caption": "Logo"
   ],
   "tour": {
     "enabled": false,
@@ -129,7 +103,7 @@
       "subtitle": "Check out our newest releases and fan favorites. Available on all major streaming platforms."
     },
     "gallery": {
-      "enabled": true,
+      "enabled": false,
       "title": "Gallery",
       "subtitle": "Behind the scenes moments, live performances, and studio sessions captured in time."
     },
