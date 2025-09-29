@@ -1,6 +1,1438 @@
-<html>
-    <head>Fox Rush Hub</head>
-    <body>
-        <p>Fox Rush B)</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fox Rush - Official Website</title>
+    <meta name="description" content="Fox Rush - Official musician website featuring latest music, tour dates, and exclusive content.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fox-rush.com/">
+    <meta property="og:title" content="Fox Rush - Official Website">
+    <meta property="og:description" content="Fox Rush - Official musician website featuring latest music, tour dates, and exclusive content.">
+    <meta property="og:image" content="https://www.fox-rush.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.fox-rush.com/">
+    <meta property="twitter:title" content="Fox Rush - Official Website">
+    <meta property="twitter:description" content="Fox Rush - Official musician website featuring latest music, tour dates, and exclusive content.">
+    <meta property="twitter:image" content="https://www.fox-rush.com/assets/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #1a1a1a;
+            --accent-color: #f4f4f4;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="90" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Music Section */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .music-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .music-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .music-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .music-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .streaming-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .streaming-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .streaming-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--accent-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 107, 53, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Tour Dates Section */
+        .tour-dates {
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .tour-dates .section-title {
+            color: var(--white);
+        }
+
+        .tour-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .tour-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .tour-date {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .tour-venue {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .tour-venue h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .tour-venue p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .tour-ticket {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .tour-ticket:hover {
+            background: #e55a2e;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: var(--secondary-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer p {
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .tour-item {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .music-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .streaming-links {
+                flex-wrap: wrap;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Fox Rush</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#music" class="nav-link">Music</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#tour" class="nav-link">Tour</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Fox Rush</h1>
+            <p id="hero-tagline">Loading...</p>
+            <a href="#music" class="cta-button">Listen Now</a>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <div class="container">
+            <h2 class="section-title">Latest Music</h2>
+            <p class="section-subtitle">Check out our newest releases and fan favorites. Available on all major streaming platforms.</p>
+            
+            <div class="music-grid">
+                <!-- Music cards will be loaded dynamically from config.json -->
+                <div class="music-card">
+                    <img src="https://via.placeholder.com/300x200/ff6b35/ffffff?text=Loading..." alt="Loading">
+                    <h3>Loading Music...</h3>
+                    <p>Loading your latest tracks...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle">Behind the scenes moments, live performances, and studio sessions captured in time.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x400/ff6b35/ffffff?text=Live+Show" alt="Live Performance">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x400/1a1a1a/ffffff?text=Studio" alt="Studio Session">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x400/666666/ffffff?text=Behind+Scenes" alt="Behind the Scenes">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x400/ff8c42/ffffff?text=Band+Photo" alt="Band Photo">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x400/333333/ffffff?text=Concert" alt="Concert">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x400/555555/ffffff?text=Acoustic" alt="Acoustic Session">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Fox Rush</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Loading bio...</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x500/ff6b35/ffffff?text=Fox+Rush+Band" alt="Fox Rush Band">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Dates Section -->
+    <section id="tour" class="section tour-dates">
+        <div class="container">
+            <h2 class="section-title">Upcoming Shows</h2>
+            <p class="section-subtitle">Don't miss your chance to experience Fox Rush live. Get your tickets now!</p>
+            
+            <div class="tour-list">
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <div>MAR</div>
+                        <div>15</div>
+                    </div>
+                    <div class="tour-venue">
+                        <h4>The Mercury Lounge</h4>
+                        <p>New York, NY</p>
+                    </div>
+                    <a href="#" class="tour-ticket">Tickets</a>
+                </div>
+                
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <div>MAR</div>
+                        <div>22</div>
+                    </div>
+                    <div class="tour-venue">
+                        <h4>The Troubadour</h4>
+                        <p>Los Angeles, CA</p>
+                    </div>
+                    <a href="#" class="tour-ticket">Tickets</a>
+                </div>
+                
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <div>APR</div>
+                        <div>05</div>
+                    </div>
+                    <div class="tour-venue">
+                        <h4>Metro Chicago</h4>
+                        <p>Chicago, IL</p>
+                    </div>
+                    <a href="#" class="tour-ticket">Tickets</a>
+                </div>
+                
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <div>APR</div>
+                        <div>18</div>
+                    </div>
+                    <div class="tour-venue">
+                        <h4>The Fillmore</h4>
+                        <p>San Francisco, CA</p>
+                    </div>
+                    <a href="#" class="tour-ticket">Sold Out</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have questions, booking inquiries, or just want to say hello? We'd love to hear from you.</p>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-music"></i>
+                        <div>
+                            <h4>Booking</h4>
+                            <p>Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Based In</h4>
+                            <p>Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="#" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Fox Rush. All rights reserved. | Made with ♪ for music lovers everywhere.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load configuration data
+        let config = {};
+        
+        async function loadConfig() {
+            try {
+                const response = await fetch('./config.json?v=' + Date.now());
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                config = await response.json();
+                initializePage();
+            } catch (error) {
+                console.error('Error loading config:', error);
+                console.log('Using fallback content...');
+                // Fallback to default content if config fails to load
+                initializePage();
+            }
+        }
+
+        function initializePage() {
+            updatePageContent();
+            initializeEventListeners();
+        }
+
+        function updatePageContent() {
+            if (!config.site) return;
+
+            // Update page title and meta
+            document.title = config.site.title || 'Fox Rush - Official Website';
+            
+            // Update hero section
+            if (config.artist) {
+                const heroTitle = document.querySelector('.hero h1');
+                const heroTagline = document.querySelector('#hero-tagline');
+                const logoElements = document.querySelectorAll('.logo');
+                
+                if (heroTitle) heroTitle.textContent = config.artist.name || 'Fox Rush';
+                if (heroTagline) {
+                    heroTagline.textContent = config.artist.tagline || 'Welcome to Fox Rush';
+                    if (!config.artist.tagline) {
+                        heroTagline.style.display = 'none';
+                    }
+                }
+                logoElements.forEach(logo => logo.textContent = config.artist.name || 'Fox Rush');
+            }
+
+            // Update music section
+            updateMusicSection();
+            
+            // Update gallery section  
+            updateGallerySection();
+            
+            // Update about section
+            updateAboutSection();
+            
+            // Update tour section
+            updateTourSection();
+            
+            // Update contact section
+            updateContactSection();
+            
+            // Update section visibility
+            updateSectionVisibility();
+        }
+
+        async function updateMusicSection() {
+            if (!config.sections?.music?.enabled) return;
+            
+            const musicGrid = document.querySelector('.music-grid');
+            if (!musicGrid) return;
+            
+            // Update section title and subtitle
+            const musicTitle = document.querySelector('#music .section-title');
+            const musicSubtitle = document.querySelector('#music .section-subtitle');
+            
+            if (musicTitle && config.sections.music.title) {
+                musicTitle.textContent = config.sections.music.title;
+            }
+            if (musicSubtitle && config.sections.music.subtitle) {
+                musicSubtitle.textContent = config.sections.music.subtitle;
+            }
+            
+            // Try to fetch from SoundCloud if auto-fetch is enabled
+            let musicData = config.music || [];
+            
+            if (config.musicSettings?.autoFetch && config.musicSettings?.soundcloudUsername) {
+                try {
+                    const fetchedTracks = await fetchSoundCloudTracks(config.musicSettings.soundcloudUsername, config.musicSettings.maxTracks || 3);
+                    if (fetchedTracks && fetchedTracks.length > 0) {
+                        musicData = fetchedTracks;
+                    }
+                } catch (error) {
+                    console.log('SoundCloud fetch failed, using manual config:', error);
+                }
+            }
+            
+            // Clear existing content
+            musicGrid.innerHTML = '';
+            
+            // Add music items
+            musicData.forEach(item => {
+                const musicCard = document.createElement('div');
+                musicCard.className = 'music-card';
+                
+                const streamingLinks = Object.entries(item.streaming || {})
+                    .filter(([platform, url]) => url)
+                    .map(([platform, url]) => {
+                        const iconMap = {
+                            spotify: 'fab fa-spotify',
+                            apple: 'fab fa-apple',
+                            youtube: 'fab fa-youtube',
+                            soundcloud: 'fab fa-soundcloud',
+                            bandcamp: 'fab fa-bandcamp'
+                        };
+                        const platformName = platform.charAt(0).toUpperCase() + platform.slice(1);
+                        return `<a href="${url}" title="${platformName}" target="_blank"><i class="${iconMap[platform] || 'fas fa-music'}"></i></a>`;
+                    }).join('');
+                
+                musicCard.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                    <div class="streaming-links">
+                        ${streamingLinks}
+                    </div>
+                `;
+                
+                musicGrid.appendChild(musicCard);
+            });
+
+            // Add music update helper button (only visible in development)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                addMusicUpdateHelper();
+            }
+        }
+
+        async function fetchSoundCloudTracks(username, maxTracks = 3) {
+            // Due to CORS policies, we can't directly fetch from SoundCloud
+            // Instead, we'll use a simple approach where you just update the config.json
+            console.log('SoundCloud auto-fetch is disabled due to CORS. Please update tracks manually in config.json');
+            return null;
+        }
+
+        // Helper function for easy music updates (development only)
+        function addMusicUpdateHelper() {
+            const musicSection = document.querySelector('#music .container');
+            if (!musicSection || document.querySelector('.music-update-helper')) return;
+
+            const helper = document.createElement('div');
+            helper.className = 'music-update-helper';
+            helper.style.cssText = `
+                background: #f0f8ff;
+                border: 2px dashed #007acc;
+                border-radius: 10px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                text-align: left;
+                font-family: monospace;
+                font-size: 0.9rem;
+            `;
+            
+            helper.innerHTML = `
+                <h4 style="margin-bottom: 1rem; color: #007acc; text-align: center;">🎵 Quick Music Update Guide</h4>
+                
+                <div style="background: white; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <p><strong>How to update your tracks:</strong></p>
+                    <ol style="margin: 0.5rem 0;">
+                        <li>Open <code>config.json</code> in your editor</li>
+                        <li>Find the <code>"music"</code> array</li>
+                        <li>Update each track object with:</li>
+                    </ol>
+                    <ul style="margin-left: 2rem; font-size: 0.85rem;">
+                        <li><code>"title"</code> - Your track name</li>
+                        <li><code>"description"</code> - Brief description</li>
+                        <li><code>"releaseDate"</code> - YYYY-MM-DD format</li>
+                        <li><code>"streaming.soundcloud"</code> - Full SoundCloud track URL</li>
+                        <li><code>"streaming.spotify"</code> - Full Spotify track URL</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #ffe6e6; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                    <p><strong>Example:</strong></p>
+                    <pre style="font-size: 0.8rem; background: white; padding: 0.5rem; border-radius: 3px; overflow-x: auto;">{
+  "title": "My Amazing Track",
+  "description": "A powerful anthem about...",
+  "releaseDate": "2024-09-15",
+  "streaming": {
+    "soundcloud": "https://soundcloud.com/fox-rush/my-amazing-track",
+    "spotify": "https://open.spotify.com/track/1A2B3C4D5E6F"
+  }
+}</pre>
+                </div>
+                
+                <p style="text-align: center; margin-top: 1rem; font-style: italic; color: #666;">
+                    This helper only appears during local development
+                </p>
+            `;
+            
+            musicSection.appendChild(helper);
+        }
+
+        function updateGallerySection() {
+            if (!config.gallery || !config.sections?.gallery?.enabled) return;
+            
+            const galleryGrid = document.querySelector('.gallery-grid');
+            if (!galleryGrid) return;
+            
+            // Update section title and subtitle
+            const galleryTitle = document.querySelector('#gallery .section-title');
+            const gallerySubtitle = document.querySelector('#gallery .section-subtitle');
+            
+            if (galleryTitle && config.sections.gallery.title) {
+                galleryTitle.textContent = config.sections.gallery.title;
+            }
+            if (gallerySubtitle && config.sections.gallery.subtitle) {
+                gallerySubtitle.textContent = config.sections.gallery.subtitle;
+            }
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Add gallery items
+            config.gallery.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.alt}">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                `;
+                galleryGrid.appendChild(galleryItem);
+            });
+            
+            // Re-initialize gallery lightbox
+            initializeGalleryLightbox();
+        }
+
+        function updateAboutSection() {
+            if (!config.artist || !config.sections?.about?.enabled) return;
+            
+            const aboutTitle = document.querySelector('#about .section-title');
+            const aboutText = document.querySelector('.about-text');
+            const aboutImage = document.querySelector('.about-image img');
+            
+            if (aboutTitle && config.sections.about.title) {
+                aboutTitle.textContent = config.sections.about.title;
+            }
+            
+            if (aboutText && config.artist.bio) {
+                aboutText.innerHTML = config.artist.bio
+                    .map(paragraph => `<p>${paragraph}</p>`)
+                    .join('');
+            }
+            
+            if (aboutImage && config.artist.image) {
+                aboutImage.src = config.artist.image;
+                aboutImage.alt = config.artist.name || 'Fox Rush Band';
+            }
+        }
+
+        function updateTourSection() {
+            const tourSection = document.querySelector('#tour');
+            if (!config.tour?.enabled || !config.sections?.tour?.enabled) {
+                if (tourSection) tourSection.style.display = 'none';
+                return;
+            }
+            
+            if (tourSection) tourSection.style.display = 'block';
+            
+            const tourTitle = document.querySelector('#tour .section-title');
+            const tourSubtitle = document.querySelector('#tour .section-subtitle');
+            const tourList = document.querySelector('.tour-list');
+            
+            if (tourTitle && config.sections.tour.title) {
+                tourTitle.textContent = config.sections.tour.title;
+            }
+            if (tourSubtitle && config.sections.tour.subtitle) {
+                tourSubtitle.textContent = config.sections.tour.subtitle;
+            }
+            
+            if (tourList && config.tour.shows) {
+                tourList.innerHTML = '';
+                
+                config.tour.shows.forEach(show => {
+                    const showDate = new Date(show.date);
+                    const month = showDate.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+                    const day = showDate.getDate();
+                    
+                    const tourItem = document.createElement('div');
+                    tourItem.className = 'tour-item';
+                    tourItem.innerHTML = `
+                        <div class="tour-date">
+                            <div>${month}</div>
+                            <div>${day}</div>
+                        </div>
+                        <div class="tour-venue">
+                            <h4>${show.venue}</h4>
+                            <p>${show.city}</p>
+                        </div>
+                        <a href="${show.ticketUrl || '#'}" class="tour-ticket">${show.soldOut ? 'Sold Out' : 'Tickets'}</a>
+                    `;
+                    tourList.appendChild(tourItem);
+                });
+            }
+        }
+
+        function updateContactSection() {
+            if (!config.contact || !config.sections?.contact?.enabled) return;
+            
+            const contactTitle = document.querySelector('#contact .section-title');
+            const contactSubtitle = document.querySelector('#contact .section-subtitle');
+            
+            if (contactTitle && config.sections.contact.title) {
+                contactTitle.textContent = config.sections.contact.title;
+            }
+            if (contactSubtitle && config.sections.contact.subtitle) {
+                contactSubtitle.textContent = config.sections.contact.subtitle;
+            }
+            
+            // Update contact info
+            const contactItems = document.querySelectorAll('.contact-item');
+            if (contactItems.length >= 3) {
+                // Email
+                if (config.contact.email) {
+                    const emailP = contactItems[0].querySelector('p');
+                    if (emailP) emailP.textContent = config.contact.email;
+                }
+                
+                // Booking
+                if (config.contact.booking) {
+                    const bookingP = contactItems[1].querySelector('p');
+                    if (bookingP) bookingP.textContent = config.contact.booking;
+                }
+                
+                // Location
+                if (config.artist?.location) {
+                    const locationP = contactItems[2].querySelector('p');
+                    if (locationP) locationP.textContent = config.artist.location;
+                }
+            }
+            
+            // Update social links
+            updateSocialLinks();
+        }
+
+        function updateSocialLinks() {
+            if (!config.social) return;
+            
+            const socialLinks = document.querySelector('.social-links');
+            if (!socialLinks) return;
+            
+            socialLinks.innerHTML = '';
+            
+            const socialPlatforms = {
+                instagram: { icon: 'fab fa-instagram', name: 'Instagram' },
+                facebook: { icon: 'fab fa-facebook', name: 'Facebook' },
+                twitter: { icon: 'fab fa-twitter', name: 'Twitter' },
+                youtube: { icon: 'fab fa-youtube', name: 'YouTube' },
+                spotify: { icon: 'fab fa-spotify', name: 'Spotify' },
+                soundcloud: { icon: 'fab fa-soundcloud', name: 'SoundCloud' },
+                bandcamp: { icon: 'fab fa-bandcamp', name: 'Bandcamp' },
+                tiktok: { icon: 'fab fa-tiktok', name: 'TikTok' },
+                twitch: { icon: 'fab fa-twitch', name: 'Twitch' }
+            };
+            
+            Object.entries(config.social).forEach(([platform, url]) => {
+                if (url && socialPlatforms[platform]) {
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.title = socialPlatforms[platform].name;
+                    link.target = '_blank';
+                    link.innerHTML = `<i class="${socialPlatforms[platform].icon}"></i>`;
+                    socialLinks.appendChild(link);
+                }
+            });
+        }
+
+        function updateSectionVisibility() {
+            if (!config.sections) return;
+            
+            // Hide disabled sections
+            Object.entries(config.sections).forEach(([sectionName, sectionConfig]) => {
+                const section = document.querySelector(`#${sectionName}`);
+                const navLink = document.querySelector(`a[href="#${sectionName}"]`);
+                
+                if (section) {
+                    section.style.display = sectionConfig.enabled ? 'block' : 'none';
+                }
+                
+                if (navLink) {
+                    navLink.parentElement.style.display = sectionConfig.enabled ? 'block' : 'none';
+                }
+            });
+        }
+
+        function initializeGalleryLightbox() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const lightbox = document.createElement('div');
+                    lightbox.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.9);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10000;
+                        cursor: pointer;
+                    `;
+                    
+                    const lightboxImg = document.createElement('img');
+                    lightboxImg.src = img.src;
+                    lightboxImg.style.cssText = `
+                        max-width: 90%;
+                        max-height: 90%;
+                        border-radius: 10px;
+                    `;
+                    
+                    lightbox.appendChild(lightboxImg);
+                    document.body.appendChild(lightbox);
+                    
+                    lightbox.addEventListener('click', () => {
+                        document.body.removeChild(lightbox);
+                    });
+                });
+            });
+        }
+
+        function initializeEventListeners() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navMenu) navMenu.classList.remove('active');
+                        
+                        // Update active nav link
+                        navLinks.forEach(nl => nl.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Update active nav link on scroll
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('.section, .hero');
+                const scrollPosition = window.scrollY + 100;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Form submission
+            const contactForm = document.querySelector('.contact-form form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for scroll animations
+            setTimeout(() => {
+                const animatedElements = document.querySelectorAll('.music-card, .gallery-item, .tour-item');
+                animatedElements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(el);
+                });
+            }, 100);
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', loadConfig);
+    </script>
+</body>
 </html>

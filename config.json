@@ -1,0 +1,156 @@
+{
+  "site": {
+    "title": "Fox Rush - Official Website",
+    "description": "Fox Rush - Official musician website featuring latest music, tour dates, and exclusive content.",
+    "url": "https://www.fox-rush.com/"
+  },
+  "artist": {
+    "name": "Fox Rush",
+    "tagline": "",
+    "location": "Tel Aviv, Israel",
+    "bio": [
+      "[Add your artist bio here - tell your story, musical style, and what makes Fox Rush unique]",
+      "[This can be 2-3 paragraphs about your journey, influences, and artistic vision]",
+      "[Update this section in the config.json file when you're ready]"
+    ],
+    "image": "https://via.placeholder.com/400x500/ff6b35/ffffff?text=Fox+Rush+Band"
+  },
+  "contact": {
+    "email": "business@fox-rush.com",
+    "booking": "",
+    "phone": "",
+    "address": ""
+  },
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "twitter": "",
+    "youtube": "",
+    "spotify": "https://open.spotify.com/artist/7dZrBaogMTmMAHyx8cRov7",
+    "soundcloud": "https://soundcloud.com/fox-rush",
+    "bandcamp": "",
+    "tiktok": "",
+    "twitch": ""
+  },
+  "musicSettings": {
+    "autoFetch": false,
+    "soundcloudUsername": "fox-rush",
+    "spotifyArtistUrl": "https://open.spotify.com/artist/7dZrBaogMTmMAHyx8cRov7",
+    "maxTracks": 3,
+    "note": "Auto-fetch is disabled due to CORS. Update the music array below with your latest tracks."
+  },
+  "music": [
+    {
+      "title": "Your Latest Track Title",
+      "description": "Add a brief description of your most recent track here.",
+      "image": "https://via.placeholder.com/300x200/ff6b35/ffffff?text=Latest+Track",
+      "releaseDate": "2024-09-01",
+      "streaming": {
+        "soundcloud": "https://soundcloud.com/fox-rush/your-track-url",
+        "spotify": "https://open.spotify.com/track/your-track-id"
+      }
+    },
+    {
+      "title": "Your Second Track Title",
+      "description": "Add a brief description of your second most recent track here.",
+      "image": "https://via.placeholder.com/300x200/1a1a1a/ffffff?text=Track+2",
+      "releaseDate": "2024-07-01",
+      "streaming": {
+        "soundcloud": "https://soundcloud.com/fox-rush/your-track-2-url",
+        "spotify": "https://open.spotify.com/track/your-track-2-id"
+      }
+    },
+    {
+      "title": "Your Third Track Title",
+      "description": "Add a brief description of your third most recent track here.",
+      "image": "https://via.placeholder.com/300x200/f4f4f4/333333?text=Track+3",
+      "releaseDate": "2024-05-01",
+      "streaming": {
+        "soundcloud": "https://soundcloud.com/fox-rush/your-track-3-url",
+        "spotify": "https://open.spotify.com/track/your-track-3-id"
+      }
+    }
+  ],
+  "gallery": [
+    {
+      "image": "https://via.placeholder.com/400x400/ff6b35/ffffff?text=Live+Show",
+      "alt": "Live Performance",
+      "caption": "Live Performance"
+    },
+    {
+      "image": "https://via.placeholder.com/400x400/1a1a1a/ffffff?text=Studio",
+      "alt": "Studio Session",
+      "caption": "Studio Session"
+    },
+    {
+      "image": "https://via.placeholder.com/400x400/666666/ffffff?text=Behind+Scenes",
+      "alt": "Behind the Scenes",
+      "caption": "Behind the Scenes"
+    },
+    {
+      "image": "https://via.placeholder.com/400x400/ff8c42/ffffff?text=Band+Photo",
+      "alt": "Band Photo",
+      "caption": "Band Photo"
+    },
+    {
+      "image": "https://via.placeholder.com/400x400/333333/ffffff?text=Concert",
+      "alt": "Concert",
+      "caption": "Concert"
+    },
+    {
+      "image": "https://via.placeholder.com/400x400/555555/ffffff?text=Acoustic",
+      "alt": "Acoustic Session",
+      "caption": "Acoustic Session"
+    }
+  ],
+  "tour": {
+    "enabled": false,
+    "shows": [
+      {
+        "date": "2024-03-15",
+        "venue": "The Mercury Lounge",
+        "city": "New York, NY",
+        "ticketUrl": "",
+        "soldOut": false
+      },
+      {
+        "date": "2024-03-22",
+        "venue": "The Troubadour",
+        "city": "Los Angeles, CA",
+        "ticketUrl": "",
+        "soldOut": false
+      }
+    ]
+  },
+  "sections": {
+    "music": {
+      "enabled": true,
+      "title": "Latest Music",
+      "subtitle": "Check out our newest releases and fan favorites. Available on all major streaming platforms."
+    },
+    "gallery": {
+      "enabled": true,
+      "title": "Gallery",
+      "subtitle": "Behind the scenes moments, live performances, and studio sessions captured in time."
+    },
+    "about": {
+      "enabled": true,
+      "title": "About Fox Rush"
+    },
+    "tour": {
+      "enabled": false,
+      "title": "Upcoming Shows",
+      "subtitle": "Don't miss your chance to experience Fox Rush live. Get your tickets now!"
+    },
+    "contact": {
+      "enabled": true,
+      "title": "Get In Touch",
+      "subtitle": "Have questions, booking inquiries, or just want to say hello? We'd love to hear from you."
+    }
+  },
+  "theme": {
+    "primaryColor": "#ff6b35",
+    "secondaryColor": "#1a1a1a",
+    "accentColor": "#f4f4f4"
+  }
+}
